@@ -1,11 +1,13 @@
 import discord
-import requests
-client = discord.Client()
 from scholarly import scholarly
-import json
+
+#need to load key seperatly becuse discord will detect if the api is on the web, just make a key.txt file and write the discord API key in it
+with open('key.txt') as f:
+    KEY = f.readline()
+print(KEY)
+client = discord.Client()
 
 NUM_ARTICLES= 3
-
 @client.event
 async def on_ready():
     print("ready to bring the truth")
@@ -16,7 +18,6 @@ async def on_message(message):
         return
     if len(message.content.split(' ')) < 3:
         return
-
     if (message.content.split(' ')[0] + message.content.split(' ')[1]).lower() == 'provethat':
         requestString = ""
         for word in message.content.split(' ')[2:]:
@@ -46,5 +47,5 @@ async def on_message(message):
 
 
 
-client.run("MTAxNzQzMjM2MDc0MjAzNTQ3Ng.GtpfN7.LgXmZl4Yh3lpYfQrVVr27PofAjinexrDR4gy78")
+client.run(KEY)
 
