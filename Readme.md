@@ -2,4 +2,4 @@
 pip install -r requirements.txt
 
 #Usage
-prove that *Search Term*
+prove that: **Search Term**
