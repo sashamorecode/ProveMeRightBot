@@ -1,5 +1,5 @@
-#Project setup
+#Project setup\n
 pip install -r requirements.txt
 
-#Usage
-prove that: **Search Term**
+#Usage\n
+prove that **Search Term**
